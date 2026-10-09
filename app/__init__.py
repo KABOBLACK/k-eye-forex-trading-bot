@@ -1,15 +1,17 @@
 """Application package for the K-Eye Forex trading simulator."""
 
 from .config import settings
-from .market_data import PriceSeries
+from .execution import PaperBroker, Trade
 from .indicators import calculate_ema, calculate_rsi
+from .market_data import PriceSeries, generate_sample_prices
+from .reporting import SimulationReport, summarize_trades
 from .risk import RiskManager, calculate_position_size
-from .execution import Trade, PaperBroker
-from .simulator import StrategySignal, generate_signal
+from .simulator import StrategySignal, SimulationResult, generate_signal, run_simulation
 
 __all__ = [
     "settings",
     "PriceSeries",
+    "generate_sample_prices",
     "calculate_ema",
     "calculate_rsi",
     "RiskManager",
@@ -17,5 +19,9 @@ __all__ = [
     "Trade",
     "PaperBroker",
     "StrategySignal",
+    "SimulationResult",
+    "SimulationReport",
     "generate_signal",
+    "run_simulation",
+    "summarize_trades",
 ]

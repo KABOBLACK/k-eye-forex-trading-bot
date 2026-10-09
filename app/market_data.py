@@ -1,13 +1,11 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Iterable, List
+from typing import List
 
 
 @dataclass
 class PriceSeries:
-    """Simple container for price data."""
-
     prices: List[float] = field(default_factory=list)
 
     def __post_init__(self) -> None:
